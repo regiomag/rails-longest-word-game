@@ -1,2 +1,30 @@
-<h1>Pages#game</h1>
-<p>Find me in app/views/pages/game.html.erb</p>
+<h1>Welcome to the longest word-game !</h1>
+<p>Here is your grid :</p>
+<p> <%= @grid %></p>
+<form action="/score" method="get">
+  <input type="hidden" name="start_time" value="<%= Time.now %>">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="text" name="answer" class="control-form" placeholder="What is your best try?">
+  <input type="submit">
+</form>
+<p>*****************************************************</p>
+
+
+
+<!-- puts "What's your best shot ?"
+start_time = Time.now
+attempt = gets.chomp
+end_time = Time.now
+
+puts "******** Now your result ********"
+
+result = run_game(attempt, grid, start_time, end_time)
+
+puts "Your word: #{attempt}"
+puts "Time Taken to answer: #{result[:time]}"
+puts "Translation: #{result[:translation]}"
+puts "Your score: #{result[:score]}"
+puts "Message: #{result[:message]}"
+
+puts "*****************************************************"
+ -->
